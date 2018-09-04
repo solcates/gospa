@@ -15,6 +15,8 @@ package cmd
 
 import (
 	"fmt"
+	"github.com/sirupsen/logrus"
+	"github.com/solcates/gospa/backend"
 	"os"
 
 	"github.com/mitchellh/go-homedir"
@@ -23,6 +25,7 @@ import (
 )
 
 var cfgFile string
+var debug bool
 
 // RootCmd represents the base command when called without any subcommands
 var RootCmd = &cobra.Command{
@@ -37,9 +40,13 @@ to quickly create a Cobra application.`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	Run: func(cmd *cobra.Command, args []string) {
+		logrus.SetFormatter(&logrus.TextFormatter{ForceColors: true})
+		if debug {
+			logrus.SetLevel(logrus.DebugLevel)
+		}
 
 		// Start a webeserver here
-
+		backend.RunServer()
 
 	},
 }
@@ -63,7 +70,7 @@ func init() {
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
-	RootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	RootCmd.Flags().BoolVarP(&debug, "debug", "d", false, "Enable DEBUG mode")
 }
 
 // initConfig reads in config file and ENV variables if set.

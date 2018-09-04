@@ -1,19 +1,10 @@
 module github.com/solcates/gospa
 
 require (
-	github.com/fsnotify/fsnotify v1.4.7 // indirect
-	github.com/hashicorp/hcl v1.0.0 // indirect
-	github.com/magiconair/properties v1.8.0 // indirect
+	github.com/davecgh/go-spew v1.1.1
 	github.com/mitchellh/go-homedir v1.0.0
-	github.com/mitchellh/mapstructure v1.0.0 // indirect
-	github.com/pelletier/go-toml v1.2.0 // indirect
-	github.com/spf13/afero v1.1.1 // indirect
-	github.com/spf13/cast v1.2.0 // indirect
+	github.com/sirupsen/logrus v1.0.6
+	github.com/solcates/gobwa v0.0.0-20180903230638-3b93726b44cc
 	github.com/spf13/cobra v0.0.3
-	github.com/spf13/jwalterweatherman v0.0.0-20180814060501-14d3d4c51834 // indirect
-	github.com/spf13/pflag v1.0.2 // indirect
 	github.com/spf13/viper v1.1.0
-	golang.org/x/sys v0.0.0-20180831094639-fa5fdf94c789 // indirect
-	golang.org/x/text v0.3.0 // indirect
-	gopkg.in/yaml.v2 v2.2.1 // indirect
 )
